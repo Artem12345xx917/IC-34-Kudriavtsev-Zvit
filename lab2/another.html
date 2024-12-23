@@ -28,21 +28,70 @@
 
     <div class="container">
         <div class="work">
-            <a href="dscrpt.html" style="margin-top:5%;">Опис предметного середовища</a><br>
-            <a href="topic.html">Тема, Мета, Місце розташування Лаб1</a><br>
-            <a href="tables.html">html-код таблиць</a><br>
-            <a href="forms.html">html-код форми</a><br>
-            <a href="pct.html">html-код зображення</a><br>
+            <a href="topic.html" style="margin-top:5%;">Тема, Мета, Місце розташування Лаб2</a><br>
+            <a href="ways.html">Способи підключення стилів</a><br>
+            <a href="tag.html">Селектори тегу</a><br>
+            <a href="class.html">Селектори класу</a><br>
+            <a href="ident.html">Селектори ідентифікаторів</a><br>
+            <a href="another.html">Ішні селектори</a><br>
             <a href="end.html">Висновки</a><br>
         </div>
         <div class="content" style="margin-top:20px;">
-            <h2>Описання</h2>
-
-            <p>Цей веб-застосунок розроблений для тих, хто шукає ідеальні місця для подорожей. Користувачам надається доступ до великого каталогу туристичних напрямків, де вони можуть знайти інформацію про різні місця, що підходять для відпочинку, екскурсій або активних подорожей. Кожне місце в каталозі має картку, яка містить детальну інформацію: опис локації, типи діяльності, ціни на послуги, найкращий час для відвідування, а також різні варіанти розміщення. До кожної локації додаються високоякісні фотографії, які допомагають користувачам візуалізувати атмосферу та визначитися з вибором.
-
-                Якщо користувач зацікавлений у певному місці, він може додати його до списку бажаних місць для подорожі або ж зберегти для подальшого планування. Після вибору бажаного напрямку, користувач може заповнити форму з контактними даними та запросити додаткову інформацію або забронювати послугу.
+            <h2>Інші селектори</h2>
+            <pre>
+                #hdr button{
+                    font-size:14px;
+                    float: left;
+                    background-color: #4A505E; 
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition-duration: 0.4s;
+                }
                 
-                Також на кожній локації доступна можливість залишити відгук після відвідування, що допомагає майбутнім мандрівникам отримати реальні рекомендації та оцінки про місце. Веб-застосунок надає можливість переглядати фотографії реальних туристів, які побували в цих місцях, що додає довіри до контенту.</p>
+                #hdr button:hover{
+                    background-color: white;
+                    color: #4A505E;
+                  }
+                  
+            
+                th, td:first-child {
+                    background: #e81a4b;
+                    color: white;
+                    padding: 10px 20px;
+                }
+                
+            
+                header button {
+                    font-family: system-ui;
+                }.rectangle a {
+                    position: relative;
+                    display: block;
+                    padding: .4em .4em .4em .8em;
+                    margin: .5em 0 .5em 2.5em;
+                    background: #f2f2f2;
+                }
+                   
+                .rectangle a:before {
+                    content: counter(li);
+                    counter-increment: li;
+                    position: absolute;
+                    left: -2.5em;
+                    top: 50%;
+                    margin-top: -1em;
+                    background: #e81a4b;
+                    color:white;
+                    height: 2em;
+                    width: 2em;
+                    line-height: 2em;
+                    text-align: center;
+                    font-weight: bold;
+                }
+                  
+            </pre>
         </div>
     </div>
 </body>
