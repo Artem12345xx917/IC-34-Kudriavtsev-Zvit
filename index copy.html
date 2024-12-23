@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTrek - Подорожі по Німеччині</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('back.jpg'); /* Замість 'path-to-your-image.jpg' вставте шлях до вашого зображення */
+            background-size: cover; /* Зображення покриває весь екран */
+            background-position: center; /* Центруємо зображення */
+            background-attachment: fixed; /* Зображення не рухається при прокручуванні */
+            color: #E5E5E5; /* Світлий текст для контрасту */
+            margin: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон для контрасту */
+            height: 130px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+        header img {
+            margin-right: 20px;
+        }
+        header button {
+            background-color: #4A90E2; /* Голубий для кнопок */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        header button:hover {
+            background-color: #357ABD; /* Темніше голубий при ховері */
+        }
+        main {
+            padding: 20px;
+        }
+        h1 {
+            color: #4A90E2; /* Голубий для заголовка */
+        }
+        h2 {
+            color: #E5E5E5; /* Світлий для підзаголовків */
+        }
+        ul {
+            list-style-type: circle;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #E5E5E5; /* Світлий текст для таблиці */
+        }
+        table, th, td {
+            border: 1px solid #444; /* Темна рамка для таблиці */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4A90E2; /* Голубий фон для заголовків таблиці */
+            color: white;
+        }
+        ol {
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон для форми */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            background-color: #444; /* Темний фон полів */
+            color: white;
+            border: 1px solid #555; /* Світліша рамка */
+        }
+        input[type="submit"] {
+            background-color: #4A90E2; /* Голубий для кнопки відправки */
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #357ABD; /* Темний голубий при ховері */
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон для футера */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button>Каталог напрямків</button>
+        <button>Про нас</button>
+        <button>Контакти</button>
+    </header>
+
+    <main>
+        <h1>Вітаємо у SmartTrek!</h1>
+        <h2>Туристичні напрямки Німеччини:</h2>
+        <ul>
+            <li>Мюнхен</li>
+            <li>Регенсбург</li>
+            <li>Гарміш-Партенкірхен</li>
+        </ul>
+
+        <h2>Популярні напрямки в Німеччині:</h2>
+        <table>
+            <tr>
+                <th>Назва напрямку</th>
+                <th>Ціна</th>
+                <th>Тип активності</th>
+            </tr>
+            <tr>
+                <td>Мюнхен</td>
+                <td>€100</td>
+                <td>Екскурсії, відпочинок</td>
+            </tr>
+            <tr>
+                <td>Регенсбург</td>
+                <td>€80</td>
+                <td>Історичні пам'ятки, екскурсії</td>
+            </tr>
+            <tr>
+                <td>Гарміш-Партенкірхен</td>
+                <td>€120</td>
+                <td>Гори, активний відпочинок</td>
+            </tr>
+        </table>
+
+        <h2>Як забронювати тур?</h2>
+        <ol>
+            <li>Оберіть напрямок.</li>
+            <li>Додайте до кошика.</li>
+            <li>Заповніть контактні дані для бронювання.</li>
+            <li>Отримайте підтвердження та насолоджуйтесь подорожжю!</li>
+        </ol>
+
+        <h2>Зареєструйтесь для бронювання:</h2>
+        <form>
+            <label for="username">Ім'я користувача:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="email">Електронна пошта:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="phone" name="phone"><br><br>
+
+            <label for="address">Адреса доставки:</label><br>
+            <input type="text" id="address" name="address"><br><br>
+
+            <input type="submit" value="Надіслати">
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SmartTrek. Всі права захищені.</p>
+    </footer>
+
+</body>
+</html>
