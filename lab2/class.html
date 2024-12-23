@@ -39,75 +39,86 @@
         <div class="content" style="margin-top:20px;">
             <h2>Селектори класу</h2>
             <pre>
-                button.red{
-                    font-size:large;
-                    border: 2px solid #e81a4b;
-                    background-color: #4A505E; 
+                .header {
+                    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон для контрасту */
+                    height: 130px;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 20px;
+                }
+                
+                .header .button {
+                    background-color: #4A90E2; /* Голубий для кнопок */
                     color: white;
-                    padding: 15px 32px;
-                    margin: 6px;
-                    text-align: center;
-                    text-decoration: none;
+                    border: none;
+                    padding: 10px 20px;
+                    margin: 5px;
                     cursor: pointer;
-                    transition-duration: 0.4s;
-                }
-                .red:hover{
-                    background-color: #e81a4b;
-                    color: white;
-                }
-                .fa-solid{
-                    margin-left: 40%;
-                    color: white;
+                    font-size: 16px;
                 }
                 
-                .fa-solid:hover {
-                    animation: fa-bounce 1s infinite;
-                }
-                .zbr{
-                    list-style: none;
-                    border-left: 10px solid #e81a4b;
-                    padding: 0;
+                .main {
+                    padding: 20px;
                 }
                 
-                .zbr li{
+                .main-title {
+                    color: #4A90E2; /* Голубий для заголовка */
+                }
+                
+                .sub-title {
+                    color: #E5E5E5; /* Світлий для підзаголовків */
+                }
+                
+                .destination-list {
+                    list-style-type: circle;
+                }
+                
+                .destination-table {
+                    width: 50%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                    color: #E5E5E5; /* Світлий текст для таблиці */
+                }
+                
+                .booking-steps {
+                    margin-top: 20px;
+                }
+                
+                .booking-form {
+                    margin-top: 20px;
+                    background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон для форми */
+                    padding: 20px;
+                    border-radius: 8px;
+                    max-width: 600px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                .booking-form label {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                    display: block;
+                    color: #E5E5E5; /* Світлий текст для лейблів */
+                }
+                
+                .booking-form input[type="text"], .booking-form input[type="email"], .booking-form input[type="tel"], .booking-form input[type="submit"] {
+                    padding: 12px;
+                    margin: 10px 0;
+                    width: 100%;
+                    background-color: #444; /* Темний фон полів */
+                    color: white;
+                    border: 1px solid #555; /* Світліша рамка */
+                    font-size: 16px;
+                    border-radius: 8px; /* Округлі кути */
+                }
+                
+                .footer {
+                    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон для футера */
+                    color: white;
                     padding: 10px;
-                }
-                .zbr li:nth-child(odd) {background: #f2f2f2;}
-                .zbr li:nth-child(even) {background: white;}
-                
-                
-                .prdct{
-                    width:50%;
-                }
-                .rectangle {
-                    counter-reset: li; 
-                    list-style: none; 
-                    padding: 0;
-                }
-                
-                 .sbmt {
-                    font-size:medium;
-                    border: 2px solid #e81a4b;
-                    background-color: white; 
-                    padding: 5px 20px;
                     text-align: center;
-                    text-decoration: none;
-                    cursor: pointer;
-                    transition-duration: 0.4s;
-                 }
-                
-                 .sbmt:hover{
-                    background-color: #e81a4b;
-                    color: white;
-                 }
-                
-                 .impt{
-                    height: 38px;
-                    padding: 0 10px;
-                    border: 1px solid rgba(237, 82, 118, 0.578);
-                    font-size: 20px;
-                    outline: none;
-                 }
+                    margin-top: 20px;
+                }
             </pre>
         </div>
     </div>
