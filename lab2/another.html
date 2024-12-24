@@ -39,56 +39,31 @@
         <div class="content" style="margin-top:20px;">
             <h2>Інші селектори</h2>
             <pre>
-                #hdr button{
-                    font-size:14px;
-                    float: left;
-                    background-color: #4A505E; 
-                    border: none;
+                #booking-form-submit {
+                    background-color: #4A90E2;
                     color: white;
-                    padding: 15px 32px;
-                    text-align: center;
-                    text-decoration: none;
                     cursor: pointer;
-                    transition-duration: 0.4s;
                 }
                 
-                #hdr button:hover{
-                    background-color: white;
-                    color: #4A505E;
-                  }
-                  
-            
-                th, td:first-child {
-                    background: #e81a4b;
-                    color: white;
-                    padding: 10px 20px;
+                #confirmation-text {
+                    font-size: 18px;
+                    color: #FFD700;
+                }
+                """
+                
+                # Pseudo-classes
+                pseudo_classes = """
+                .header .button:hover {
+                    background-color: #357ABD;
                 }
                 
-            
-                header button {
-                    font-family: system-ui;
-                }.rectangle a {
-                    position: relative;
-                    display: block;
-                    padding: .4em .4em .4em .8em;
-                    margin: .5em 0 .5em 2.5em;
-                    background: #f2f2f2;
+                input:focus {
+                    outline: none;
+                    border-color: #4A90E2;
                 }
-                   
-                .rectangle a:before {
-                    content: counter(li);
-                    counter-increment: li;
-                    position: absolute;
-                    left: -2.5em;
-                    top: 50%;
-                    margin-top: -1em;
-                    background: #e81a4b;
-                    color:white;
-                    height: 2em;
-                    width: 2em;
-                    line-height: 2em;
-                    text-align: center;
-                    font-weight: bold;
+                
+                form input[type="submit"]:hover {
+                    background-color: #357ABD;
                 }
                   
             </pre>
