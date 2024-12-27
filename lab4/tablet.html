@@ -39,7 +39,76 @@
             <img src="screenshots/tablet.jpg" alt="mobile code" width="370px" height="432px">
             <p>Код стилю планшетної версії</p>
             <pre>
-                CSS
+                /* Медиазапрос для планшетных устройств (от 768px до 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+
+    /* Шапка */
+    .header {
+        height: 120px; /* Уменьшаем высоту шапки */
+        padding: 0 15px; /* Уменьшаем отступы */
+        flex-direction: column; /* Располагаем элементы в колонку для лучшей видимости */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Кнопки в шапке */
+    .header .button {
+        width: 150px; /* Уменьшаем ширину кнопок */
+        height: 100px; /* Уменьшаем высоту кнопок */
+        padding: 10px; /* Уменьшаем внутренние отступы */
+        font-size: 16px; /* Уменьшаем размер шрифта */
+        margin: 5px 0; /* Уменьшаем отступы между кнопками */
+    }
+
+    /* Заголовки */
+    h1 {
+        font-size: 22px; /* Уменьшаем размер заголовка */
+    }
+
+    /* Списки */
+    .destination-list {
+        margin-left: 10px; /* Уменьшаем отступы слева */
+    }
+
+    /* Таблица */
+    table {
+        width: 100%; /* Расширяем таблицу на всю ширину */
+        margin-top: 20px; /* Уменьшаем верхний отступ */
+    }
+
+    /* Ячейки таблицы */
+    .destination-table th, .destination-table td {
+        padding: 12px; /* Уменьшаем отступы внутри ячеек */
+    }
+
+    /* Кнопки для выбора направления */
+    .destination-button {
+        padding: 10px 20px; /* Уменьшаем отступы кнопок */
+        font-size: 16px; /* Уменьшаем шрифт кнопок */
+    }
+
+    /* Формы */
+    .booking-form input {
+        padding: 10px; /* Уменьшаем отступы в полях ввода */
+        font-size: 14px; /* Уменьшаем размер шрифта в полях */
+    }
+
+    /* Кнопка отправки формы */
+    #booking-form-submit {
+        width: 100%; /* Ширина кнопки на весь экран */
+        font-size: 16px; /* Уменьшаем шрифт */
+    }
+    
+    /* Шаги бронирования */
+    .booking-steps {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px; /* Уменьшаем шрифт в футере */
+    }
+}
             </pre>
         </div>
     </div>

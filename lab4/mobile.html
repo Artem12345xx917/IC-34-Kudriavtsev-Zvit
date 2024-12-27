@@ -39,7 +39,74 @@
             <img src="screenshots/mobile.jpg" alt="mobile code" width="307px" height="431px">
             <p>Код стилю мобільної версії</p>
             <pre>
-                CSS</pre>
+                /* Для телефонов (например, 320px до 599px) */
+@media (max-width: 599px) {
+  body {
+    font-size: 14px; /* Уменьшаем шрифт для телефонов */
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 22px; /* Уменьшаем размер заголовка */
+    word-wrap: break-word; /* Переносим длинные строки */
+    line-height: 1.2; /* Уменьшаем межстрочное расстояние */
+    text-align: center; /* Центрируем заголовок */
+  }
+
+  .header {
+    height: 80px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header .button {
+    width: 120px; /* Уменьшаем кнопки */
+    height: 50px;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .welcome-text {
+    font-size: 18px; /* Уменьшаем размер текста "Вітаємо" */
+    text-align: center; /* Центрируем текст */
+    padding: 20px; /* Добавляем отступы для удобства */
+    word-break: break-word; /* Принудительный перенос длинных слов */
+    line-height: 1.4;
+  }
+
+  .about-section {
+    font-size: 14px; /* Уменьшаем текст в блоках */
+    line-height: 1.5;
+    padding: 10px;
+  }
+
+  .about-us {
+    padding: 10px;
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  /* Уменьшаем размер таблицы и ячеек */
+  table {
+    width: 100%; /* Полная ширина таблицы */
+    font-size: 12px;
+  }
+
+  .destination-table th, .destination-table td {
+    padding: 10px;
+    font-size: 12px; /* Уменьшаем шрифт в ячейках */
+  }
+
+  /* Уменьшаем размер шрифта для футера */
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+</pre>
         </div>
     </div>
 </body>
