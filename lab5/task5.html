@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <title>Лабораторні работи</title>
+</head>
+<body>
+    <div id="intro">
+        <h1>Звіти з лабораторних робіт</h1>
+        <h2>З дисципліни "Інтернет-технології та проєктування web-застосувань"</h2>
+        <h4>Студентка групи ІС-34 Гончаренко Вероніка</h4><br>
+    </div>
+    
+    
+    <div class="labs">
+        <a href="../index.html" style="margin-left:25px;">Лабораторна 1</a>
+        <a href="../index2.html">Лабораторна 2</a>
+        <a href="../index3.html">Лабораторна 3</a>
+        <a href="../index4.html">Лабораторна 4</a>
+        <a href="../index5.html">Лабораторна 5</a>
+        <a href="../index6.html">Лабораторна 6</a>
+        <a href="../index7.html">Лабораторна 7</a>
+        <a href="../index8.html">Лабораторна 8</a>
+        <a href="../index9.html">Лабораторна 9</a>
+    </div>
+
+    <div class="container">
+        <div class="work">
+            <a href="topic.html" style="margin-top:5%;">Тема, Мета, Місце розташування Лаб5</a><br>
+            <a href="task1.html">Завдання 1</a><br>
+            <a href="task2.html">Завдання 2</a><br>
+            <a href="task3.html">Завдання 3</a><br>
+            <a href="task4.html">Завдання 4</a><br>
+            <a href="task5.html">Завдання 5</a><br>
+            <a href="end.html">Висновки</a><br>
+        </div>
+        <div class="content" style="margin-top:20px;">
+            <p>Програмний код</p>
+            <h3>task5.html</h3>
+            <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title&gt;Спливаючі підказки&lt;/title&gt;
+                    &lt;link rel="stylesheet" href="style.css"&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+            
+                    &lt;h1&gt;Додайте підказки до елементів на сторінці&lt;/h1&gt;
+            
+                    &lt;div&gt;
+                        &lt;label for="elementText"&gt;Текст елемента:&lt;/label&gt;
+                        &lt;input type="text" id="elementText" placeholder="Введіть текст елемента" /&gt;
+                    &lt;/div&gt;
+            
+                    &lt;div&gt;
+                        &lt;label for="tooltipText"&gt;Текст підказки:&lt;/label&gt;
+                        &lt;input type="text" id="tooltipText" placeholder="Введіть текст підказки" /&gt;
+                    &lt;/div&gt;
+            
+                    &lt;button onclick="createTooltip()"&gt;Додати підказку&lt;/button&gt;
+            
+                    &lt;div id="content"&gt;&lt;/div&gt;
+            
+                    &lt;div class="tooltip"&gt;&lt;/div&gt;
+            
+                    &lt;script src="script.js"&gt;&lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                </code></pre>
+
+            <h3>style.css</h3>
+            <pre>
+/* Стилі для спливаючої підказки */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none; /* За замовчуванням підказка схована */
+}
+
+/* Стилі для тексту з підказками */
+.tooltip-target {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Стиль для полів вводу та кнопки */
+input {
+    margin: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+             </pre>
+
+            <h3>script.js</h3>
+            <pre>
+                // Функція для прив'язки підказки до елемента
+                function attachTooltip() {
+                    // Отримуємо всі елементи, до яких прив'язані підказки
+                    const tooltipTargets = document.querySelectorAll('.tooltip-target');
+                    // Отримуємо сам елемент підказки
+                    const tooltipElement = document.querySelector('.tooltip');
+                    
+                    // Перебираємо всі елементи, до яких буде прив'язана підказка
+                    tooltipTargets.forEach(target => {
+                        // Додаємо обробник події на наведення миші
+                        target.addEventListener('mouseover', function(event) {
+                            // Отримуємо текст підказки з атрибута data-tooltip елемента
+                            const tooltipText = target.getAttribute('data-tooltip');
+                            // Встановлюємо текст підказки
+                            tooltipElement.textContent = tooltipText;
+                            // Отримуємо координати елемента на сторінці
+                            const rect = target.getBoundingClientRect();
+                            // Встановлюємо позицію підказки (зліва і зверху)
+                            tooltipElement.style.left = `${rect.left + window.scrollX}px`;
+                            tooltipElement.style.top = `${rect.top + window.scrollY - 30}px`;
+                            // Показуємо підказку
+                            tooltipElement.style.display = 'block';
+                        });
+                
+                        // Додаємо обробник події на відведення миші
+                        target.addEventListener('mouseout', function() {
+                            // Ховаємо підказку, коли миша залишає елемент
+                            tooltipElement.style.display = 'none';
+                        });
+                    });
+                }
+                
+                // Функція для створення нової підказки
+                function createTooltip() {
+                    // Отримуємо введений текст елемента
+                    const elementText = document.getElementById('elementText').value;
+                    // Отримуємо введений текст підказки
+                    const tooltipText = document.getElementById('tooltipText').value;
+                
+                    // Перевіряємо, чи обидва поля не порожні
+                    if (elementText && tooltipText) {
+                        // Створюємо новий параграф <p> для нового елемента
+                        const newElement = document.createElement('p');
+                        // Додаємо клас для прив'язки підказки
+                        newElement.classList.add('tooltip-target');
+                        // Встановлюємо атрибут data-tooltip для підказки
+                        newElement.setAttribute('data-tooltip', tooltipText);
+                        // Встановлюємо текст нового елемента
+                        newElement.textContent = elementText;
+                
+                        // Додаємо новий елемент в розділ контенту
+                        document.getElementById('content').appendChild(newElement);
+                
+                        // Очищаємо поля вводу після додавання нового елемента
+                        document.getElementById('elementText').value = '';
+                        document.getElementById('tooltipText').value = '';
+                
+                        // Повторно прив'язуємо підказки до всіх елементів, щоб нові елементи теж працювали
+                        attachTooltip();
+                    } else {
+                        // Якщо поля не заповнені, вивести повідомлення
+                        alert('Будь ласка, заповніть обидва поля!');
+                    }
+                }
+                
+                // Ініціалізація функції при завантаженні сторінки, щоб прив'язати підказки до існуючих елементів
+                window.onload = attachTooltip;
+            </pre>
+            <p>Скріншот виконання</p>
+            <img src="screenshots/task5-1.jpg">
+            <img src="screenshots/task5-2.jpg">
+        </div>
+    </div>
+</body>
+</html>
