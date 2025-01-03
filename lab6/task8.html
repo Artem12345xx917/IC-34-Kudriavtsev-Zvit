@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <title>Лабораторні работи</title>
+</head>
+<body>
+    <div id="intro">
+        <h1>Звіти з лабораторних робіт</h1>
+        <h2>З дисципліни "Інтернет-технології та проєктування web-застосувань"</h2>
+        <h4>Студент групи ІС-34 Кудрявцев Артем</h4><br>
+    </div>
+    
+    
+    <div class="labs">
+        <a href="../index.html" style="margin-left:25px;">Лабораторна 1</a>
+        <a href="../index2.html">Лабораторна 2</a>
+        <a href="../index3.html">Лабораторна 3</a>
+        <a href="../index4.html">Лабораторна 4</a>
+        <a href="../index5.html">Лабораторна 5</a>
+        <a href="../index6.html">Лабораторна 6</a>
+        <a href="../index7.html">Лабораторна 7</a>
+        <a href="../index8.html">Лабораторна 8</a>
+        <a href="../index9.html">Лабораторна 9</a>
+    </div>
+
+    <div class="container">
+        <div class="work">
+            <a href="topic.html" style="margin-top:5%;">Тема, Мета, Місце розташування Лаб6</a><br>
+            <a href="task2.html">Завдання 2</a><br>
+            <a href="task4.html">Завдання 4</a><br>
+            <a href="task6.html">Завдання 6</a><br>
+            <a href="task8.html">Завдання 8</a><br>
+            <a href="task9.html">Завдання 9</a><br>
+            <a href="task10.html">Завдання 10</a><br>
+            <a href="end.html">Висновки</a><br>
+        </div>
+        <div class="content" style="margin-top:20px;">
+            <h1>Код програми:</h1>
+            <pre>
+                // Функція-конструктор Storage
+                function Storage(initialItems) {
+                    this.items = initialItems;
+        
+                    // Метод для отримання товарів
+                    this.getItems = function() {
+                        return this.items;
+                    };
+        
+                    // Метод для додавання нового товару
+                    this.addItem = function(item) {
+                        this.items.push(item);
+                    };
+        
+                    // Метод для видалення товару
+                    this.removeItem = function(item) {
+                        const index = this.items.indexOf(item);
+                        if (index !== -1) {
+                            this.items.splice(index, 1);
+                        }
+                    };
+                }
+        
+                // Початковий масив товарів
+                const initialItems = ["apple", "banana", "mango"];
+                
+                // Створення об'єкту Storage
+                const storage = new Storage(initialItems);
+        
+                // Виведення поточних товарів на сторінку
+                function displayItems() {
+                    const itemsList = storage.getItems();
+                    const itemListElement = document.getElementById("item-list");
+                    itemListElement.innerHTML = ""; // Очищаємо список перед оновленням
+                    itemsList.forEach(item => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = item;
+                        itemListElement.appendChild(listItem);
+                    });
+                }
+        
+                // Функція для додавання нового товару
+                function addNewItem() {
+                    const newItemInput = document.getElementById("new-item");
+                    const newItem = newItemInput.value.trim();
+                    if (newItem) {
+                        storage.addItem(newItem);
+                        displayItems();
+                        newItemInput.value = ""; // Очищаємо поле введення
+                    } else {
+                        alert("Please enter a product name.");
+                    }
+                }
+        
+                // Функція для видалення існуючого товару
+                function removeExistingItem() {
+                    const removeItemInput = document.getElementById("remove-item");
+                    const itemToRemove = removeItemInput.value.trim();
+                    if (itemToRemove) {
+                        storage.removeItem(itemToRemove);
+                        displayItems();
+                        removeItemInput.value = ""; // Очищаємо поле введення
+                    } else {
+                        alert("Please enter a product to remove.");
+                    }
+                }
+        
+                // Спочатку відображаємо товари на сторінці
+                displayItems();
+            </pre>
+            <h1>Скріншот виконання:</h1>
+            <img src="screenshots/task8_1.jpg">
+            <img src="screenshots/task8_2.jpg">
+            <img src="screenshots/task8_3.jpg">
+        </div>
+    </div>
+</body>
+</html>

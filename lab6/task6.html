@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <title>Лабораторні работи</title>
+</head>
+<body>
+    <div id="intro">
+        <h1>Звіти з лабораторних робіт</h1>
+        <h2>З дисципліни "Інтернет-технології та проєктування web-застосувань"</h2>
+        <h4>Студент групи ІС-34 Кудрявцев Артем</h4><br>
+    </div>
+    
+    
+    <div class="labs">
+        <a href="../index.html" style="margin-left:25px;">Лабораторна 1</a>
+        <a href="../index2.html">Лабораторна 2</a>
+        <a href="../index3.html">Лабораторна 3</a>
+        <a href="../index4.html">Лабораторна 4</a>
+        <a href="../index5.html">Лабораторна 5</a>
+        <a href="../index6.html">Лабораторна 6</a>
+        <a href="../index7.html">Лабораторна 7</a>
+        <a href="../index8.html">Лабораторна 8</a>
+        <a href="../index9.html">Лабораторна 9</a>
+    </div>
+
+    <div class="container">
+        <div class="work">
+            <a href="topic.html" style="margin-top:5%;">Тема, Мета, Місце розташування Лаб6</a><br>
+            <a href="task2.html">Завдання 2</a><br>
+            <a href="task4.html">Завдання 4</a><br>
+            <a href="task6.html">Завдання 6</a><br>
+            <a href="task8.html">Завдання 8</a><br>
+            <a href="task9.html">Завдання 9</a><br>
+            <a href="task10.html">Завдання 10</a><br>
+            <a href="end.html">Висновки</a><br>
+        </div>
+        <div class="content" style="margin-top:20px;">
+            <h1>Код програми:</h1>
+            <pre>
+                // Масив медикаментів із початковими цінами
+                const medicines = [
+                    { name: "Noshpa", price: 170 }, // Медикамент 1
+                    { name: "Analgin", price: 55 }, // Медикамент 2
+                    { name: "Quanil", price: 310 }, // Медикамент 3
+                    { name: "Alphacholine", price: 390 }, // Медикамент 4
+                ];
+        
+                // Функція для обчислення знижок
+                function applyDiscount(medicines) {
+                    return medicines.map((medicine, index) => {
+                        return {
+                            id: index + 1, // Додаємо унікальний ідентифікатор
+                            name: medicine.name, // Назва медикаменту
+                            price: medicine.price > 300 
+                                ? medicine.price * 0.7 // Якщо ціна > 300, знижка 30%
+                                : medicine.price // Якщо ціна <= 300, залишаємо без змін
+                        };
+                    });
+                }
+        
+                // Функція для заповнення таблиці
+                function fillTable(tableId, medicinesArray) {
+                    const tableBody = document.querySelector(`#${tableId} tbody`); // Знаходимо тіло таблиці
+                    medicinesArray.forEach(medicine => { // Проходимо по кожному елементу масиву
+                        const row = document.createElement('tr'); // Створюємо новий рядок таблиці
+                        row.innerHTML = `
+                            <td>${medicine.id}</td>
+                            <td>${medicine.name}</td> 
+                            <td>${medicine.price.toFixed(2)}</td> 
+                        `;
+                        tableBody.appendChild(row); // Додаємо рядок у таблицю
+                    });
+                }
+        
+                // Формування таблиці початкових цін
+                const initialMedicines = medicines.map((medicine, index) => ({
+                    id: index + 1, // Унікальний ID
+                    name: medicine.name, // Назва медикаменту
+                    price: medicine.price, // Початкова ціна
+                }));
+                fillTable('initialPricesTable', initialMedicines); // Заповнюємо таблицю
+        
+                // Формування таблиці зі знижками
+                const discountedMedicines = applyDiscount(medicines); // Розраховуємо знижки
+                fillTable('discountedPricesTable', discountedMedicines); // Заповнюємо таблицю
+            </pre>
+            <h1>Скріншот виконання:</h1>
+            <img src="screenshots/task6.jpg">
+        </div>
+    </div>
+</body>
+</html>
