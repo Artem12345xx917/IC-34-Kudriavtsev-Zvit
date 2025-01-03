@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <title>Лабораторні работи</title>
+</head>
+<body>
+    <div id="intro">
+        <h1>Звіти з лабораторних робіт</h1>
+        <h2>З дисципліни "Інтернет-технології та проєктування web-застосувань"</h2>
+        <h4>Студент групи ІС-34 Кудрявцев Артем</h4><br>
+    </div>
+    
+    
+    <div class="labs">
+        <a href="../index.html" style="margin-left:25px;">Лабораторна 1</a>
+        <a href="../index2.html">Лабораторна 2</a>
+        <a href="../index3.html">Лабораторна 3</a>
+        <a href="../index4.html">Лабораторна 4</a>
+        <a href="../index5.html">Лабораторна 5</a>
+        <a href="../index6.html">Лабораторна 6</a>
+        <a href="../index7.html">Лабораторна 7</a>
+        <a href="../index8.html">Лабораторна 8</a>
+        <a href="../index9.html">Лабораторна 9</a>
+    </div>
+
+    <div class="container">
+        <div class="work">
+            <a href="topic.html" style="margin-top:5%;">Тема, Мета, Місце розташування Лаб6</a><br>
+            <a href="task2.html">Завдання 2</a><br>
+            <a href="task4.html">Завдання 4</a><br>
+            <a href="task6.html">Завдання 6</a><br>
+            <a href="task7.html">Завдання 7</a><br>
+            <a href="task8.html">Завдання 8</a><br>
+            <a href="task9.html">Завдання 9</a><br>
+            <a href="task10.html">Завдання 10</a><br>
+            <a href="end.html">Висновки</a><br>
+        </div>
+        <div class="content" style="margin-top:20px;">
+            <h1>Код програми:</h1>
+            <pre>
+                // Завдання 10 - створення та знищення блоків
+                const buttonCreate = document.querySelector("[data-create]");
+                const buttonDestroy = document.querySelector("[data-destroy]");
+                
+                function createBoxes(amount) {
+                    const boxesContainer = document.getElementById("boxes");
+                    const boxes = [];  // Массив для зберігання створених блоків
+                
+                    for (let i = 0; i < amount; i++) {
+                        const box = document.createElement("div");  // Створюємо новий блок
+                        const size = 30 + i * 10;  // Визначаємо розмір блоку (збільшується на 10px кожного разу)
+                        box.style.width = `${size}px`;
+                        box.style.height = `${size}px`;
+                        box.style.backgroundColor = getRandomHexColor();  // Генеруємо випадковий колір для блоку
+                        boxes.push(box);  // Додаємо блок до масиву
+                    }
+                
+                    boxesContainer.append(...boxes);  // Додаємо всі блоки в контейнер
+                }
+                
+                function destroyBoxes() {
+                    const boxesContainer = document.getElementById("boxes");
+                    boxesContainer.innerHTML = "";  // Очищаємо всі блоки
+                }
+                
+                buttonCreate.addEventListener('click', () => {
+                    const number = Number(document.querySelector(".task10").value);
+                
+                    if(number >= 1 && number <=100){  // Перевірка на валідність введеного числа
+                        createBoxes(number);  // Створюємо блоки
+                        document.querySelector(".task10").value = "";  // Очищаємо поле вводу
+                    }
+                    else {
+                        alert("Please enter a number between 1 and 100.");  // Повідомлення при неправильному вводу
+                    }
+                });
+                
+                buttonDestroy.addEventListener('click', destroyBoxes);  // Видалення блоків при натисканні кнопки "Destroy"
+            </pre>
+            <h1>Скріншот виконання:</h1>
+            <img src="screenshots/task10.jpg">
+        </div>
+    </div>
+</body>
+</html>
